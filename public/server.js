@@ -19,7 +19,7 @@ const students = ['Jimmy', 'Timothy', 'Jimothy']
 
 app.get('/', (req, res) => {
     rollbar.info("user has entered my page")
-    res.sendFile(path.join(__dirname, '../public/index.html'))
+    res.sendFile(path.join(__dirname, '/index.html'))
 })
 
 app.get('/api/students', (req, res) => {
