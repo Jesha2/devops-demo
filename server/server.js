@@ -11,7 +11,8 @@ var rollbar = new Rollbar({
   captureUncaught: true,
   captureUnhandledRejections: true,
 })
-app.use(express.static(`public`))
+
+
 // record a generic message and send it to Rollbar
 rollbar.log('Hello world!')
 
@@ -19,7 +20,7 @@ const students = ['Jimmy', 'Timothy', 'Jimothy']
 
 app.get('/', (req, res) => {
     rollbar.info("user has entered my page")
-    res.sendFile(path.join(__dirname, '/index.html'))
+    res.sendFile(path.join(__dirname, '..public/index.html'))
 })
 
 app.get('/api/students', (req, res) => {
